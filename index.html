@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My pendulum</title>
+    <style>
+        .container {
+            height: 100vh;
+            width: 100vw;
+            background-image: linear-gradient(to bottom, rgb(6, 224, 248), rgb(1, 162, 6));
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        .base {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(255, 15, 15);
+            border-radius: 0% 0% 50% 50%;
+            border-bottom: 2px solid transparent;
+            border: 2px solid rgba(255, 255, 255, .5);
+        }
+        
+        .thread {
+            width: 3px;
+            height: 300px;
+            top: 10px;
+            left: 25px;
+            transform-origin: 0px 0px;
+            position: relative;
+            background-color: black;
+            animation: rota 2s ease-in-out infinite;
+        }
+        
+        .bob {
+            width: 50px;
+            height: 50px;
+            left: 5px;
+            top: -5px;
+            z-index: 3;
+            position: relative;
+            background: radial-gradient(circle at 70% 35%, white, #848584 30%, #000000 50%);
+            border-radius: 50%;
+            transform-origin: 0px -275px;
+            animation: rota2 2s ease-in-out alternate infinite;
+        }
+        
+        @keyframes rota {
+            0%,
+            100% {
+                background: radial-gradient(circle at 70% 35%, white, #878787 30%, #909090 50%);
+                transform: rotate(45deg);
+            }
+            50% {
+                background: radial-gradient(circle at 30% 65%, white, #80847e 30%, #6e6e6e 50%);
+                transform: rotate(-45deg);
+            }
+        }
+        
+        @keyframes rota2 {
+            0%,
+            100% {
+                transform: rotate(48deg);
+            }
+            50% {
+                background: radial-gradient(circle at 30% 35%, white, #848584 30%, #000000 50%);
+                transform: rotate(-45deg);
+                /* background-color: black; */
+            }
+        }
+        
+        .hing {
+            width: 25px;
+            height: 25px;
+            background: radial-gradient(circle at 70% 35%, white, #0f0f0f 30%, #070707 50%);
+            z-index: 4;
+            position: relative;
+            top: 18px;
+            left: 14px;
+            border-radius: 50%;
+            /* background-color: black; */
+        }
+        
+        .shadow {
+            width: 40px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            margin: 50px auto 0;
+            animation: moveShade 1s ease-in-out alternate infinite;
+        }
+        
+        @keyframes moveShade {
+            0% {
+                transform: translateX(-300px) scale(1.8, .5);
+                filter: blur(20px);
+            }
+            50% {
+                filter: blur(3px);
+            }
+            100% {
+                transform: translateX(300px) scale(1.8, .5);
+                filter: blur(20px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="base">
+            <div class="hing">
+
+            </div>
+            <div class="thread">
+
+            </div>
+            <div class="bob">
+
+            </div>
+            <div class="shadow">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
